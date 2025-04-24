@@ -24,7 +24,7 @@ function getApi(city) {
   var api = new XMLHttpRequest();
   api.open(
     "Get",
-    `http://api.weatherapi.com/v1/forecast.json?key=ecb4816f611e4eddb8e165702252304&q=${city}&days=7`
+    `https://api.weatherapi.com/v1/forecast.json?key=ecb4816f611e4eddb8e165702252304&q=${city}&days=7`
   );
   api.send();
   api.addEventListener("load", function () {
