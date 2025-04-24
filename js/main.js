@@ -6,7 +6,6 @@ input.addEventListener("keydown", function (e) {
   if (e.key == "Enter" && input.value.trim() != "") {
     city = input.value;
     getApi(city);
-    console.log(input.value);
     input.value = "";
   }
 });
@@ -15,7 +14,6 @@ btn.addEventListener("click", function () {
   if (input.value.trim() != "") {
     city = input.value;
     getApi(city);
-    console.log(input.value);
     input.value = "";
   }
 });
@@ -23,12 +21,11 @@ btn.addEventListener("click", function () {
 function getApi(city) {
   var api = new XMLHttpRequest();
   api.open(
-    "Get",
+    "GET",
     `https://api.weatherapi.com/v1/forecast.json?key=ecb4816f611e4eddb8e165702252304&q=${city}&days=7`
   );
   api.send();
   api.addEventListener("load", function () {
-    console.log(JSON.parse(api.response));
     var data = JSON.parse(api.response);
     if (data.current && data.location && data.forecast.forecastday) {
       msg.classList.add("d-none");
@@ -83,7 +80,7 @@ function display(location, current) {
             </div>
 
             <div class="weather-status d-flex justify-content-between align-items-center">
-            <img src=${icon} class="weather-img" alt="icon">
+            <img src=${icon} class="weather-img" alt="currentIcon">
             <div class="weather-temp text-end">
                 <h1 class="temp">${Math.round(current.temp_c)} °C</h1>
                 <h5 class="condition regular-txt">${current.condition.text}</h5>
