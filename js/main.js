@@ -138,7 +138,7 @@ function forecastDisplay(forecast) {
 }
 
 function weatherIcon(condition, isDay) {
-  var base = "../assets/weather/";
+  var base = "assets/weather/";
   condition = condition.toLowerCase();
   var icon = "clear";
 
