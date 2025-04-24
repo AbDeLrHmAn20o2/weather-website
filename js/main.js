@@ -83,7 +83,7 @@ function display(location, current) {
             </div>
 
             <div class="weather-status d-flex justify-content-between align-items-center">
-            <img src=${icon} class="weather-img">
+            <img src=${icon} class="weather-img" alt="icon">
             <div class="weather-temp text-end">
                 <h1 class="temp">${Math.round(current.temp_c)} °C</h1>
                 <h5 class="condition regular-txt">${current.condition.text}</h5>
@@ -127,7 +127,7 @@ function forecastDisplay(forecast) {
                     <h5 class="item-date">${dayNum} ${monthName}</h5>
                     <img src=${
                       day.day.condition.icon
-                    } alt="" class="forecast-img">
+                    } alt="icon" class="forecast-img">
                     <h5 class="item-temp">${Math.round(
                       day.day.maxtemp_c
                     )} °C</h5>
@@ -138,7 +138,7 @@ function forecastDisplay(forecast) {
 }
 
 function weatherIcon(condition, isDay) {
-  var base = "assets/weather/";
+  var base = "weather-website/assets/weather/";
   condition = condition.toLowerCase();
   var icon = "clear";
 
