@@ -14,7 +14,7 @@
   font-weight: 400;
 }
 body {
-  background: url(assets/bg.jpg);
+  background: url(../assets/bg.jpg);
   width: 100%;
   min-height: 100vh;
   background-position: center;
@@ -145,7 +145,7 @@ body::before {
   width: fit-content;
 }
 .night-mode {
-  background: url(assets/bg-night.jpg);
+  background: url(../assets/bg-night.jpg);
   background-position: center;
   background-size: cover;
 }
